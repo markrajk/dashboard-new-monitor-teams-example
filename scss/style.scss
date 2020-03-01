@@ -1,0 +1,584 @@
+$green-gradient: linear-gradient(#3cf166, #17de24);
+$orange-gradient: linear-gradient(#f5e144, #ffa30f);
+$red-gradient: linear-gradient(#fa2020, #ef0049);
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop-sm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 850px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-md {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lgxl {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xl {
+    @media (max-width: 1500px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xxl {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-h($breakpoint) {
+  @if $breakpoint == height-sm {
+    @media (max-height: 600px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-v($breakpoint) {
+  @if $breakpoint == desktop-xsm {
+    @media (max-height: 480px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media (max-height: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-mds {
+    @media (max-height: 700px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-md {
+    @media (max-height: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @media (max-height: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xl {
+    @media (max-height: 1500px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xxl {
+    @media (max-height: 1800px) {
+      @content;
+    }
+  }
+}
+
+@function resize($base) {
+  $result: $base * 0.9;
+  @return $result;
+}
+@function calculate($val1, $val2) {
+  $result: $val1 - $val2;
+  @return $result;
+}
+
+// FONTS
+@font-face {
+  font-family: "HankRnd-Light";
+  src: url("../fonts/Hank\ Rnd/EOT/HankRnd-Light.eot");
+  src: url("../fonts/Hank\ Rnd/OTF/HankRnd-Light.otf") format("otf"),
+    url("../fonts/Hank\ Rnd/WOFF2/HankRnd-Light.woff2") format("woff2"),
+    url("../fonts/Hank\ Rnd/WOFF/HankRnd-Light.woff") format("woff"),
+    url("../fonts/Hank\ Rnd/TTF/HankRnd-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HankRnd-Regular";
+  src: url("../fonts/Hank\ Rnd/EOT/HankRnd-Regular.eot");
+  src: url("../fonts/Hank\ Rnd/OTF/HankRnd-Regular.otf") format("otf"),
+    url("../fonts/Hank\ Rnd/WOFF2/HankRnd-Regular.woff2") format("woff2"),
+    url("../fonts/Hank\ Rnd/WOFF/HankRnd-Regular.woff") format("woff"),
+    url("../fonts/Hank\ Rnd/TTF/HankRnd-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HankRnd-Bold";
+  src: url("../fonts/Hank\ Rnd/EOT/HankRnd-Bold.eot");
+  src: url("../fonts/Hank\ Rnd/OTF/HankRnd-Bold.otf") format("otf"),
+    url("../fonts/Hank\ Rnd/WOFF2/HankRnd-Bold.woff2") format("woff2"),
+    url("../fonts/Hank\ Rnd/WOFF/HankRnd-Bold.woff") format("woff"),
+    url("../fonts/Hank\ Rnd/TTF/HankRnd-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HankRnd-Black";
+  src: url("../fonts/Hank\ Rnd/EOT/HankRnd-Black.eot");
+  src: url("../fonts/Hank\ Rnd/OTF/HankRnd-Black.otf") format("otf"),
+    url("../fonts/Hank\ Rnd/WOFF2/HankRnd-Black.woff2") format("woff2"),
+    url("../fonts/Hank\ Rnd/WOFF/HankRnd-Black.woff") format("woff"),
+    url("../fonts/Hank\ Rnd/TTF/HankRnd-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Heebo-Thin";
+  src: url("../fonts/Heebo/Heebo-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Heebo-Light";
+  src: url("../fonts/Heebo/Heebo-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Heebo-Regular";
+  src: url("../fonts/Heebo/Heebo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heebo-Medium";
+  src: url("../fonts/Heebo/Heebo-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heebo-Bold";
+  src: url("../fonts/Heebo/Heebo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heebo-ExtraBold";
+  src: url("../fonts/Heebo/Heebo-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heebo-Black";
+  src: url("../fonts/Heebo/Heebo-Black.ttf") format("truetype");
+}
+
+html {
+  font-size: 62.5%;
+  //font-size: 68%;
+  @include respond(desktop-xxl) {
+    font-size: 58%;
+  }
+
+  @include respond(desktop-xl) {
+    font-size: 53%;
+  }
+
+  @include respond(desktop-md) {
+    font-size: 48%;
+  }
+}
+
+body {
+  min-width: 600px;
+}
+header {
+  font-family: "Heebo-Bold";
+  z-index: 10000;
+  .navbar {
+    padding-top: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    font-family: "Heebo-Bold";
+    background-color: #fdfdfd !important;
+    border-bottom: 1px solid #e4e4e4;
+
+    & a,
+    & span {
+      color: #000 !important;
+    }
+
+    &-left {
+      margin-left: 0.1rem;
+      font-size: 1.375rem;
+    }
+
+    &-center {
+      font-size: 2.2rem;
+
+      & img {
+        margin-top: -0.15rem;
+        margin-right: 0.5rem;
+        width: 2.7rem;
+        height: 2.7rem;
+        border-radius: 50%;
+      }
+    }
+
+    &-right {
+      font-size: 1.375rem;
+    }
+  }
+
+  .header-links {
+    font-family: "Heebo-Regular";
+    background-color: #fdfdfd !important;
+    padding: 0;
+    padding-top: 4rem;
+    display: flex;
+    border-bottom: 1.25px solid #e4e4e4;
+    & ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      list-style: none;
+
+      & li {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        padding-bottom: 1.2rem;
+        margin-right: 1.8rem;
+        text-align: center;
+        & a {
+          white-space: nowrap;
+          text-decoration: none;
+          font-size: 1.45rem;
+          color: #8f8fa2;
+        }
+
+        &.active {
+          font-family: "Heebo-Bold";
+          position: relative;
+
+          & a {
+            color: #343441;
+          }
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1.25px;
+            width: 100%;
+
+            transform: translate(0, 100%);
+            background-color: #fd2851;
+          }
+        }
+      }
+    }
+
+    &-btn,
+    &-btn:hover {
+      margin-top: -0.2rem;
+      font-family: "Heebo-Bold";
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      height: 2.6rem;
+      display: block;
+      margin-left: auto;
+      padding: 0.5rem 1.4rem;
+      font-size: 1.2rem;
+      color: #fff;
+      border-radius: 14px;
+      background-color: #fd2851;
+
+      & svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: .3rem;
+        margin-top: -.2rem;
+
+        & .cls-1, .cls-2, .cls-4 {
+          fill: none;
+        }
+  
+        & .cls-1, .cls-2 {
+          stroke: #fff;
+        }
+  
+        & .cls-2 {
+          stroke-linecap: round;
+          stroke-width: .15rem;
+        }
+  
+        & .cls-3 {
+          stroke: none;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 13rem;
+  padding-bottom: 3rem;
+  background-color: #f8f9fb;
+}
+
+.section-top {
+  padding-top: 4rem;
+  display: grid;
+  grid-gap: 3.2rem;
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 34rem 68rem;
+  min-width: 100rem !important;
+
+  @include respond(desktop-xxl) {
+    grid-gap: 2.9rem;
+  }
+
+  @include respond(desktop-xl) {
+    grid-gap: 2.6rem;
+  }
+
+  @include respond(desktop-lg) {
+    grid-gap: 2rem;
+  }
+
+  @include respond(desktop-md) {
+    grid-gap: 1.6rem;
+  }
+}
+
+.graph-card {
+  height: 34rem;
+  width: 100%;
+  padding-bottom: 3rem;
+  border-radius: 13px;
+  border: solid 1.5px #f5f5f5;
+
+  &-header {
+    padding: 2rem;
+    padding-bottom: 5rem;
+
+    & h3 {
+      margin: 0;
+      margin-top: -0.1rem;
+      white-space: nowrap;
+      font-family: "Heebo-Bold";
+      font-size: 2.3rem;
+      line-height: 2.8rem;
+      color: #000;
+    }
+
+    & h4 {
+      margin-top: 0.1rem;
+      margin-bottom: 1.2rem;
+      font-family: "Heebo-Medium";
+      font-size: 1.16rem;
+      color: #88888c;
+      letter-spacing: 0.24px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    min-height: calc(100% - 9.9rem);
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+    padding-bottom: 3.5rem;
+
+    & .bar {
+      position: relative;
+      width: 16px;
+      height: auto;
+      border-radius: 6px;
+      background-color: rgba($color: #c1c0c8, $alpha: 0.24);
+
+      &:first-child {
+        @include respond(desktop-lgxl) {
+          display: none !important;
+        }
+      }
+
+      &-fill {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 6px;
+
+        &-green {
+          background: $green-gradient;
+        }
+
+        &-orange {
+          background: $orange-gradient;
+        }
+
+        &-red {
+          background: $red-gradient;
+        }
+      }
+
+      &-info {
+        font-family: "HankRnd-Bold";
+        position: absolute;
+        white-space: nowrap;
+        left: 50%;
+        bottom: -5.5%;
+        font-size: 1.15rem;
+        color: #6f6e77;
+        transform: translate(-50%, 100%);
+      }
+    }
+  }
+}
+
+.bottom {
+  max-height: 100%;
+  // border-radius: 13px;
+  // border: solid 1.5px #f5f5f5;
+
+  & .right-container {
+    height: 100%;
+  }
+
+  &-header {
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    //border-radius: 13px;
+    border: solid 1.5px #f5f5f5;
+    //border: 1.5px solid #eaebee;
+    border-top-left-radius:  13px;
+    border-top-right-radius:  13px;
+    border-bottom: none;
+
+    & h4 {
+      margin: 0;
+      margin-bottom: 1.2rem;
+      font-family: "Heebo-Medium";
+      font-size: 1.2rem;
+      letter-spacing: 0.24px;
+      color: #88888c;
+    }
+
+    & h3 {
+      margin: 0;
+      font-family: "Heebo-Bold";
+      font-size: 2.4rem;
+      color: #000000;
+    }
+
+    & .custom-dd-link {
+      font-family: "Lato", sans-serif;
+      font-size: 1.6rem;
+      color: #0077ff;
+    }
+  }
+
+  & select {
+    //width: 6rem;
+    font-family: inherit;
+    border: none;
+    font-size: 1.4rem;
+    color: #007bff;
+    outline: none;
+  }
+
+  &-body {
+    height: 100%;
+    //height: 200px;
+    max-height: calc(100% - 10.55rem);
+
+    & .list-group-flush {
+      height: 100%;
+      border: solid 1.5px #f5f5f5;
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+      }
+
+      @include respond-v(desktop-sm) {
+        //height: calc(100% + 8.3rem);
+      }
+    }
+
+    & .list-group-item {
+      font-family: "Lato", sans-serif;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      font-size: 1.5rem;
+      color: #2c2f34;
+
+      border-bottom: solid 1px #f5f5f5;
+
+      & p {
+        width: 80%;
+      }
+
+      & span {
+
+      }
+    }
+  }
+}
+
+// UTILITIES
+
+.options {
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  margin-right: auto;
+  font-size: 1.45rem;
+  font-weight: normal;
+  & a {
+    color: #878590;
+
+    &.active {
+      //font-weight: bold;
+      color: #1a173b;
+    }
+  }
+
+  & .divider {
+    margin: 0 0.5rem;
+    font-weight: bold;
+  }
+}
+
+.p-default {
+  padding-left: 35rem !important;
+  padding-right: 35rem !important;
+
+  @include respond(desktop-xxl) {
+    padding-left: 17rem !important;
+    padding-right: 17rem !important;
+  }
+
+  @include respond(desktop-xl) {
+    padding-left: 12rem !important;
+    padding-right: 12rem !important;
+  }
+
+  @include respond(desktop-lg) {
+    padding-left: 10rem !important;
+    padding-right: 10rem !important;
+  }
+
+  @include respond(desktop-md) {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
+
+  @include respond(desktop-sm) {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
