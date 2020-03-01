@@ -266,7 +266,7 @@ main {
     outline: none; }
   .bottom-body {
     height: 100%;
-    max-height: calc(100% - 10.55rem); }
+    max-height: calc(100% - 9.15rem); }
     .bottom-body .list-group-flush {
       height: 100%;
       border: solid 1.5px #f5f5f5;
