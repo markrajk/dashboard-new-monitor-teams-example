@@ -326,7 +326,7 @@ main {
     "card1 card2"
     "card3 card4";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 34rem 68rem;
+  grid-template-rows: 34rem 51.7rem;
   min-width: 100rem !important;
 
   @include respond(desktop-xxl) {
